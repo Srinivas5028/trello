@@ -1,0 +1,87 @@
+<div style="height:100vh;background-color: rgb(75, 191, 107);" >
+    <div id="header" class="welcome-header">
+        <div class="header-button">
+            <a class="header-button-link">
+                <span style="width:40%"></span>
+                <span style="float:right;width:60%;">Boards</span>
+            </a>
+        </div>
+        <div class="header-search">
+            <input class="header-search-input" type="text" autocomplete="off" autocorrect="off" spellcheck="false" value="">
+        </div>
+        <a class="header-logo">
+            <span class="header-logo-troll"></span>
+        </a>
+    </div>
+    <div id="content">
+        <div class="board-header" style="position:relative;">
+            <div class="welcome-text" ng-click="">{{welcomeText}}</div>
+            <div class="welcome-image"></div>
+        </div>
+        <div class="board-body">
+            <div class="board-body-elements">
+                <div style="padding: 3px;">
+                    <span>Basics</span>
+                    <span style="float:right;cursor:pointer;">...</span>
+                </div>
+                <div class="board-body-element" style="position:relative;" ng-repeat="welcomeText in welcomeTextArray">
+                    <span>{{welcomeText}}</span>
+                    <span ng-class="{'fa fa-pencil edit-icon' : welcomeText != ''}" ng-click="editText('welcometext', $index)"></span>
+                    <div style="display: none" id="welcometext_{{$index}}">
+                        <div style="background-color:#000000;opacity:0.5;z-index:999;width:100%;height:100%;bottom:0;top:0;right:0;left:0;position:fixed;"></div>
+                        <div style="width: 200px;z-index: 1000;position: absolute;">
+                            <div style="background:#fff;border: 1px solid;box-sizing: border-box;height: 100px;"><textarea style="width: 100%;height:100%;padding:2px;" ng-model="$parent.textArea"></textarea></div>
+                            <div style="background:#008000;width: 50px;height: 25px;margin-top:10px;color: white;text-align: center;cursor: pointer;" ng-click="saveText('welcometext', $index)">Save</div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div style="padding:3px;float:left;cursor:pointer;font-size:12px;color:#808080;">Add card...</div>
+                <div class="board-body-element" style="display: none;">
+                    <textarea style="width: 100%;padding:2px;"></textarea>
+                    <div style="float: left;background:#008000;width:50px;height:25px;margin-top:8px;color:white;text-align:center;cursor:pointer;">Add</div>
+                    <div style="float:left;width:50px;height:25px;margin-top:8px;text-align:center;cursor:pointer;">X</div>
+                </div>
+            </div>
+            <div class="board-body-elements">
+                <div style="padding: 3px;">
+                    <span>Intermediate</span>
+                    <span style="float:right;cursor:pointer;">...</span>
+                </div>
+                <div class="board-body-element" style="position:relative;" ng-repeat="intermediateText in intermediateTextArray">
+                    <span>{{intermediateText}}</span>
+                    <span ng-class="{'fa fa-pencil edit-icon' : intermediateText != ''}" ng-click="editText('intermediatetext', $index)"></span>
+                    <div style="display: none;" id="intermediatetext_{{$index}}">
+                        <div style="background-color:#000000;opacity:0.5;z-index:999;width:100%;height:100%;bottom:0;top:0;right:0;left:0;position:fixed;"></div>
+                        <div style="width: 200px;z-index: 1000;position: absolute;">
+                            <div style="background:#fff;border: 1px solid;box-sizing: border-box;height: 100px;"><textarea style="width: 100%;height:100%;padding:2px;" ng-model="$parent.textArea"></textarea></div>
+                            <div style="background:#008000;width: 50px;height: 25px;margin-top:10px;color: white;text-align: center;cursor: pointer;" ng-click="saveText('intermediatetext', $index)">Save</div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div style="padding:3px;float:left;cursor:pointer;font-size:12px;color:#808080;">Add card...</div>
+            </div>
+            <div class="board-body-elements">
+                <div style="padding: 3px;">
+                    <span>Advanced</span>
+                    <span style="float:right;cursor:pointer;">...</span>
+                </div>
+                <div class="board-body-element" style="position:relative;" ng-repeat="advancedText in advancedTextArray">
+                    <span>{{advancedText}}</span>
+                    <span ng-class="{'fa fa-pencil edit-icon' : advancedText != ''}" ng-click="editText('advancetext', $index)"></span>
+                    <div style="display: none;" id="advancetext_{{$index}}">
+                        <div style="background-color:#000000;opacity:0.5;z-index:999;width:100%;height:100%;bottom:0;top:0;right:0;left:0;position:fixed;"></div>
+                        <div style="width: 200px;z-index: 1000;position: absolute;">
+                            <div style="background:#fff;border: 1px solid;box-sizing: border-box;height: 100px;"><textarea style="width: 100%;height:100%;padding:2px;" ng-model="$parent.textArea"></textarea></div>
+                            <div style="background:#008000;width: 50px;height: 25px;margin-top:10px;color: white;text-align: center;cursor: pointer;" ng-click="saveText('advancetext', $index)">Save</div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div style="padding:3px;float:left;cursor:pointer;font-size:12px;color:#808080;">Add card...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
